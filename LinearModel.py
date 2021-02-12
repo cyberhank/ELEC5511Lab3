@@ -8,13 +8,12 @@ class simpleLinearmodel():
         self.b = np.random.randn(1)[0]
     def linear_regression(self,file):
         data = pd.read_csv(file)
-        print(data)
         xmean = st.mean(data['YearsExperience'])
         ymean = st.mean(data['Salary'])
         xsum = pd.DataFrame.sum(data['YearsExperience'])
         ysum = pd.DataFrame.sum(data['Salary'])
         Sxx = pd.DataFrame.sum((data['YearsExperience'] - xmean)**2)
-        Sxy = pd.DataFrame.sum((data['YearsExperience']- xmean)(data['Salary']-ymean))
+        Sxy = pd.DataFrame.sum((data['YearsExperience']- xmean)*(data['Salary']-ymean))
         print(Sxx)
         print(Sxy)
         return
