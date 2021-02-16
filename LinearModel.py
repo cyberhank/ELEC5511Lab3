@@ -16,6 +16,12 @@ class simpleLinearmodel():
         Sxy = pd.DataFrame.sum((data['YearsExperience']- xmean)*(data['Salary']-ymean))
         print(Sxx)
         print(Sxy)
+        a = Sxy/Sxx
+        b = ymean - (xmean*a)
+        return a,b
+    def find_r(self,a,b,x):
+        yhat = pd.DataFrame()
+
         return
     pass
 
